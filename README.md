@@ -14,6 +14,9 @@
 - <span style="color: blue;">Important topics will be highlighted in blue.</span>
 - <span style="color: lightcyan;">External links will be in cyan</span>
 
+## 📚 Guides
+[Lua](https://github.com/emerald6o4/The-Programmers-Treasure-Trove/blob/main/guides/lua.md) (WIP)
+
 ## ⚠️ Notice
 
 🚧 This repository is a work in progress and is currently being maintained by a couple dedicated contributors. Your patience and support are greatly appreciated. 🙏
