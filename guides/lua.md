@@ -71,6 +71,7 @@ Oh and also, if you have seen me putting text in my examples above, it's called 
 ]]
 ```
 
+
 ### Tables
 
 In Lua, tables are a fundamental data structure that can be used to create arrays, dictionaries, objects, and more. They are highly flexible and can store different types of values as key-value pairs. Here's an explanation of tables in Lua:
@@ -89,11 +90,13 @@ local myTable = table.create()
 -   Key-Value Pairs:
     Tables store data as key-value pairs, where the keys can be of any type (except nil) and the values can be any valid Lua value. Keys are used to access the corresponding values. For example:
 
+    (**Important note for tables: Remember to put the commas on your tables! You don't need a comma on your last table entry, but it doesnt hurt to have it.**)
+
 ```
 local person = {
   name = "John",
-  age = 25,
-  isStudent = true
+  age = 25, -- Comma needed
+  isStudent = true -- Comma not needed
 }
 print(person.name)  -- Output: John
 print(person.age)   -- Output: 25
@@ -149,6 +152,7 @@ print(#fruits)  -- Output: 3
     Lua provides several useful methods to manipulate tables, such as table.insert(), table.remove(), and table.sort(). These methods allow you to insert elements, remove elements, and sort arrays, respectively.
 
 Tables are a powerful feature in Lua and are widely used for organizing and manipulating data. They offer flexibility and can be used in various ways depending on your program's needs.
+
 
 ### Functions
 
