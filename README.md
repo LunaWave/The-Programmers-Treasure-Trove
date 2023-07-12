@@ -16,4 +16,7 @@
 
 ## ⚠️ Notice
 
-🚧 This repository is a work in progress and is currently being maintained by a single dedicated contributor. Your patience and support are greatly appreciated. 🙏
+🚧 This repository is a work in progress and is currently being maintained by a couple dedicated contributors. Your patience and support are greatly appreciated. 🙏
+
+#### This is possible thanks to
+- Emerald6o4 (Lua)
