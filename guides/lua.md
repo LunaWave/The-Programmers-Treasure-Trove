@@ -6,13 +6,14 @@
 Lua <span style="font-size: 10px;">(*Not to be confused with <span style="color: lightcyan;">[Luau](https://luau-lang.org/)</span>*)</span> is a programming language known for its unique and straightforward syntax. It keeps things simple, making it easier to learn and understand. With Lua, you'll find a clean and intuitive approach that allows you to express your ideas concisely. Its focus on readability and minimalism promotes writing clear and maintainable code.
 
 
-> Remember! Before learning any programming language... "<u>**Successful programming requires a combination of dedication, continuous learning, and honing of skills.**</u> and almost always dedication is greater than skill! As long as you perservere you will grow!"
+> Remember! Before learning any programming language... "<u>**Successful programming requires a combination of dedication, continuous learning, and honing of skills.**</u> and almost always dedication is greater than skill! As long as you persevere you will grow!"
 
 ## Table of Contents:
 - [Introduction](#introduction-to-lua) 
 - [Table of Contents](#table-of-contents) 
 - [Variables](#variables)
 - [Tables](#tables)
+- [Functions](#functions)
 
 
 ## Variables
@@ -148,3 +149,59 @@ print(#fruits)  -- Output: 3
     Lua provides several useful methods to manipulate tables, such as table.insert(), table.remove(), and table.sort(). These methods allow you to insert elements, remove elements, and sort arrays, respectively.
 
 Tables are a powerful feature in Lua and are widely used for organizing and manipulating data. They offer flexibility and can be used in various ways depending on your program's needs.
+
+### Functions
+
+ In Lua, functions are blocks of reusable code that can be called and executed multiple times. They allow you to encapsulate logic, improve code organization, and promote the concept of "Don't Repeat Yourself" (DRY), which encourages reusing code instead of duplicating it. Here's an explanation of functions and how they relate to the DRY principle:
+
+-   Function Declaration:
+    In Lua, you can declare a function using the function keyword, followed by the function name, parentheses for parameters (optional), and a block of code enclosed in end. For example:
+
+```
+function greet()
+  print("Hello, world!")
+end
+```
+
+-   Function Parameters:
+    Functions can take input values called parameters or arguments. Parameters are specified within the parentheses during function declaration. For example:
+
+```
+function greet(name)
+  print("Hello, " .. name .. "!")
+end
+
+greet("John")  -- Output: Hello, John!
+``` 
+    
+-   Function Return Values: (Referenced briefly in [Variable assignment](#variable-assignment-and-manipulation))
+    Functions can also return values using the return keyword. This allows functions to compute a result and pass it back to the caller. For example:
+
+```
+function add(a, b)
+  return a + b
+end
+
+local result = add(3, 5)
+print(result)  -- Output: 8
+```
+
+-   Function Reusability and DRY:
+    The concept of DRY encourages avoiding code duplication by writing reusable functions. When you encounter a task that needs to be performed multiple times, you can define a function for that task and call it whenever needed. This improves code maintainability and reduces the chances of introducing errors. For example:
+
+```
+    function greet(name)
+      print("Hello, " .. name .. "!")
+    end
+
+    greet("John")
+    greet("Jane")
+    greet("Alice")
+```
+
+In this example, instead of writing the greeting code multiple times, we define a greet() function once and call it with different names. This adheres to the DRY principle and avoids repetition.
+
+-   Function Scope:
+    Variables declared within a function have local scope, which means they are only accessible within that function. This allows functions to have their own set of variables without interfering with other parts of the program.
+
+Functions are a fundamental building block in Lua programming. They enable code reuse, promote modularity, and play a crucial role in adhering to the DRY principle by avoiding code duplication. By defining functions for common tasks, you can write more efficient and maintainable code.
