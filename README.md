@@ -10,7 +10,7 @@ This contains:
 - Guides to learning different langauges
 
 Key:
-- <span style="color: lime;">Useful or important links will be in green.</span>
+- <span style="color: green;">Useful or important links will be in green.</span>
 ## **Notice**
 
 This is still in progress and being worked on by only me. Please be patient
