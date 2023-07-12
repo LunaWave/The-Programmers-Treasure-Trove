@@ -12,10 +12,12 @@ Lua <span style="font-size: 10px;">(*Not to be confused with <span style="color:
 - [Introduction](#introduction-to-lua) 
 - [Table of Contents](#table-of-contents) 
 - [Resources](#resources)
-- [Variables](#variables)
-- [Tables](#tables)
-- [Functions](#functions)
-- [Usage of libraries](#usage-of-libraries-and-frameworks)
+- Basic Lua
+    - [Variables](#variables)
+    - [Tables](#tables)
+    - [Functions](#functions)
+- More Advanced Lua
+    - [Usage of Libraries & Frameworks](#usage-of-libraries-and-frameworks)
 - [Misc. Topics](#misc-topics)
     - [Object-Oriented Programming](#object-oriented-programming-oop)
 
