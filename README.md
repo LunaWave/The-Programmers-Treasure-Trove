@@ -12,6 +12,7 @@
 🔑 Key:
 - <span style="color: green;">Useful or important links will be highlighted in green.</span>
 - <span style="color: blue;">Important topics will be highlighted in blue.</span>
+- <span style="color: lightcyan;">External links will be in cyan</span>
 
 ## ⚠️ Notice
 
