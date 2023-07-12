@@ -5,3 +5,6 @@
 
 Lua <span style="font-size: 10px;">(*Not to be confused with <span style="color: lightcyan;">[Luau](https://luau-lang.org/)</span>*)</span> is a programming language known for its unique and straightforward syntax. It keeps things simple, making it easier to learn and understand. With Lua, you'll find a clean and intuitive approach that allows you to express your ideas concisely. Its focus on readability and minimalism promotes writing clear and maintainable code.
 
+## Table of Contents:
+1. [Introduction](#introduction-to-lua)
+1.1 [Table of Contents](#table-of-contents)
