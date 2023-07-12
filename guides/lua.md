@@ -7,4 +7,4 @@ Lua <span style="font-size: 10px;">(*Not to be confused with <span style="color:
 
 ## Table of Contents:
 1. [Introduction](#introduction-to-lua) \n
-1b. [Table of Contents](#table-of-contents) \n
+1a. [Table of Contents](#table-of-contents) \n
