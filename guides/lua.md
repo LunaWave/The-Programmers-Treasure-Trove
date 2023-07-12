@@ -11,9 +11,21 @@ Lua <span style="font-size: 10px;">(*Not to be confused with <span style="color:
 ## Table of Contents:
 - [Introduction](#introduction-to-lua) 
 - [Table of Contents](#table-of-contents) 
+- [Resources](#resources)
 - [Variables](#variables)
 - [Tables](#tables)
 - [Functions](#functions)
+
+## Resources
+
+Here are some things you might need for development in Lua! (Note: Before you install from their website, check if your package manager has it, it makes installing easy! :D)
+
+- [Lua](https://www.lua.org/) is needed.. Duh 
+    - [Install the latest version of Lua](https://www.lua.org/download.html)
+- [Luarocks](https://luarocks.org/) contains a ton of libraries and frameworks for Lua. (Luarocks usage is not covered in this)
+    - [Install Luarocks!](https://github.com/luarocks/luarocks/wiki/Download)
+- [LuaJIT](https://luajit.org/) is a Just-In-Time compiler, meaning it compiles your code before running, making it super-fast! (Some Lua built functions do not work in LuaJIT. But for the most part, it maintains 95% of Lua's functionality, with [7x the speed](https://staff.fnwi.uva.nl/h.vandermeer/docs/lua/luajit/luajit_performance.html))
+    - [Install LuaJIT](https://luajit.org/download.html) 
 
 
 ## Variables
