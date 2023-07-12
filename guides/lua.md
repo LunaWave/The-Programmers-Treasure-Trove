@@ -15,6 +15,7 @@ Lua <span style="font-size: 10px;">(*Not to be confused with <span style="color:
 - [Variables](#variables)
 - [Tables](#tables)
 - [Functions](#functions)
+- [Usage of libraries](#usage-of-libraries-and-frameworks)
 - [Misc. Topics](#misc-topics)
     - [Object-Oriented Programming](#object-oriented-programming-oop)
 
@@ -249,6 +250,14 @@ Libraries (Libs) and Frameworks can be used to enhance the Lua langauge.
 -   Frameworks:
     Frameworks, on the other hand, are more comprehensive software structures that provide a foundation or a set of tools to build applications. Frameworks often impose a specific architecture or design pattern to structure your code and provide a framework-specific way of solving problems. They are more opinionated and offer a higher-level abstraction compared to libraries. Frameworks in Lua typically provide a complete set of tools, modules, and conventions to develop specific types of applications, such as web frameworks or game frameworks. Examples of Lua frameworks include LÖVE (for game development), OpenResty (for web development with Nginx), and Sailor (a web framework).
 
+### How do I load a Library?
+
+You can load a library using the 'require' statement: (For example, loading lfs)
+```
+-- Has to be correct vvv 
+local lfs = require('lfs')
+--    ^^^ can be anything 
+```
 ## Misc. Topics
 
 These are miscellaneous topics and sections that could be useful for later in your programming career!
