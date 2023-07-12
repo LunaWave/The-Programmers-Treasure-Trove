@@ -15,6 +15,8 @@ Lua <span style="font-size: 10px;">(*Not to be confused with <span style="color:
 - [Variables](#variables)
 - [Tables](#tables)
 - [Functions](#functions)
+- [Misc. Topics](#misc-topics)
+    - [Object-Oriented Programming](#object-oriented-programming-oop)
 
 ## Resources
 
@@ -27,6 +29,19 @@ Here are some things you might need for development in Lua! (Note: Before you in
 - [LuaJIT](https://luajit.org/) is a Just-In-Time compiler, meaning it compiles your code before running, making it super-fast! (Some Lua built functions do not work in LuaJIT. But for the most part, it maintains 95% of Lua's functionality, with [7x the speed](https://staff.fnwi.uva.nl/h.vandermeer/docs/lua/luajit/luajit_performance.html))
     - [Install LuaJIT](https://luajit.org/download.html) 
 
+- Libraries (LuaRocks)
+    - [LuaSocket](https://lunarmodules.github.io/luasocket/) <br>
+        -   Network support for the Lua language <br>
+            ```luarocks install luasocket``` <br>
+            ```local socket = require('socket')```
+    - [Lpeg](https://www.inf.puc-rio.br/~roberto/lpeg/) ([View on LuaRocks](https://luarocks.org/modules/gvvaughan/lpeg)) <br>
+        -   LPeg is a new pattern-matching library for Lua, based on Parsing Expression Grammars (PEGs). <br>
+            ```luarocks install lpeg``` <br>
+            ```local lpeg = require('lpeg')```
+    - [LFS or Lua File System](https://lunarmodules.github.io/luafilesystem/) ([View on LuaRocks](https://luarocks.org/modules/hisham/luafilesystem))<br>
+        -   LuaFileSystem is a Lua library developed to complement the set of functions related to file systems offered by the standard Lua distribution. <br>
+            ```luarocks install lfs``` <br>
+            ```local lfs = require('lfs')```
 
 ## Variables
 
@@ -50,9 +65,9 @@ Lua supports multiple data types, and the type of a variable is determined by th
 - Booleans: Represented as either true or false.
 - Tables: A versatile data structure that can hold multiple values.
 - Functions: Blocks of reusable code.
-
-#### Variable Assignment and Manipulation:
-You can assign new values to a variable at any time. For example:
+---
+-   Variable Assignment and Manipulation:
+    You can assign new values to a variable at any time. For example:
 
 ```
 myVariable = 20  -- Assigning a new value
@@ -84,7 +99,7 @@ Oh and also, if you have seen me putting text in my examples above, it's called 
 ```
 
 
-### Tables
+## Tables
 
 In Lua, tables are a fundamental data structure that can be used to create arrays, dictionaries, objects, and more. They are highly flexible and can store different types of values as key-value pairs. Here's an explanation of tables in Lua:
 
@@ -166,7 +181,7 @@ print(#fruits)  -- Output: 3
 Tables are a powerful feature in Lua and are widely used for organizing and manipulating data. They offer flexibility and can be used in various ways depending on your program's needs.
 
 
-### Functions
+## Functions
 
  In Lua, functions are blocks of reusable code that can be called and executed multiple times. They allow you to encapsulate logic, improve code organization, and promote the concept of "Don't Repeat Yourself" (DRY), which encourages reusing code instead of duplicating it. Here's an explanation of functions and how they relate to the DRY principle:
 
@@ -190,7 +205,7 @@ end
 greet("John")  -- Output: Hello, John!
 ``` 
     
--   Function Return Values: (Referenced briefly in [Variable assignment](#variable-assignment-and-manipulation))
+-   Function Return Values: (Referenced briefly in Variable assignment)
     Functions can also return values using the return keyword. This allows functions to compute a result and pass it back to the caller. For example:
 
 ```
@@ -221,3 +236,73 @@ In this example, instead of writing the greeting code multiple times, we define 
     Variables declared within a function have local scope, which means they are only accessible within that function. This allows functions to have their own set of variables without interfering with other parts of the program.
 
 Functions are a fundamental building block in Lua programming. They enable code reuse, promote modularity, and play a crucial role in adhering to the DRY principle by avoiding code duplication. By defining functions for common tasks, you can write more efficient and maintainable code.
+
+## Usage of Libraries and Frameworks
+
+Libraries (Libs) and Frameworks can be used to enhance the Lua langauge.
+
+### What is the difference between Libs and Frameworks?
+
+-   Libraries:
+    Libraries in Lua are collections of reusable code that provide specific functionality. They are typically designed to solve specific problems or provide utility functions. Lua libraries are often distributed as standalone modules or files that can be included in your Lua scripts. Libraries can be developed by the Lua community or by individuals and organizations to extend Lua's capabilities. They provide ready-to-use functions and modules that you can incorporate into your Lua code. Examples of Lua libraries include lpeg (for pattern matching and parsing), luasocket (for networking), and luafilesystem (for file system operations).
+
+-   Frameworks:
+    Frameworks, on the other hand, are more comprehensive software structures that provide a foundation or a set of tools to build applications. Frameworks often impose a specific architecture or design pattern to structure your code and provide a framework-specific way of solving problems. They are more opinionated and offer a higher-level abstraction compared to libraries. Frameworks in Lua typically provide a complete set of tools, modules, and conventions to develop specific types of applications, such as web frameworks or game frameworks. Examples of Lua frameworks include LÖVE (for game development), OpenResty (for web development with Nginx), and Sailor (a web framework).
+
+## Misc. Topics
+
+These are miscellaneous topics and sections that could be useful for later in your programming career!
+
+Table of Contents for Misc. Topics:
+- [Object Oriented Programming (OOP)](#object-oriented-programming-oop)
+
+
+### Object Oriented Programming (OOP)
+
+In Lua, you can implement object-oriented programming (OOP) concepts using tables and metatables. While Lua doesn't have built-in classes like some other programming languages, you can create objects and define their behavior using metatables. Here's a simplified explanation of OOP in Lua:
+
+-   Objects and Tables:
+    In Lua, objects can be represented using tables. Tables can store data and functions, making them suitable for constructing objects. Each object is an instance of a table.
+
+-   Metatables:
+    Metatables are special tables in Lua that define the behavior of other tables (objects). By assigning a metatable to a table, you can specify how operations like indexing, assignment, and arithmetic should be handled. Metatables allow you to define custom methods and control the behavior of objects.
+
+-   Creating Objects:
+    To create an object, you typically start by creating a table and setting its metatable to define its behavior. You can define methods as functions inside the metatable. For example:
+
+```
+-- Define a metatable with methods
+local myClass = {
+  value = 0,
+  increment = function(self, amount)
+    self.value = self.value + amount
+  end
+}
+
+-- Create an object and set its metatable
+local myObject = {}
+setmetatable(myObject, { __index = myClass })
+
+-- Use the object and its methods
+print(myObject.value)      -- Output: 0
+myObject:increment(5)
+print(myObject.value)      -- Output: 5
+```
+
+In this example, myClass is the metatable defining the behavior of the objects. increment is a method defined inside the metatable. By setting the metatable of myObject to myClass, myObject inherits the methods and properties defined in myClass.
+
+-   Method Invocation:
+-   When calling a method on an object, Lua provides a shorthand syntax using the colon (:) operator. The colon automatically passes the object as the first argument (self) to the method. For example:
+
+```
+myObject:increment(5)
+```
+    This is equivalent to myObject.increment(myObject, 5), where myObject is explicitly passed as the first argument.
+
+-   Inheritance and Polymorphism:
+    In Lua, you can achieve inheritance by creating a child table with its own metatable and setting the parent table as its metatable. This allows the child object to inherit methods and properties from the parent object. Polymorphism can be achieved by overriding methods in the child metatable or by adding additional methods specific to the child object.
+
+-   Garbage Collection:
+    Lua handles memory management through garbage collection. When an object is no longer referenced, it becomes eligible for garbage collection, and Lua automatically frees the associated memory.
+
+It's important to note that Lua's approach to OOP using tables and metatables is flexible but requires careful design and manual management of object behavior. Several Lua libraries and frameworks provide additional abstractions and conventions to simplify and enhance object-oriented programming in Lua, such as middleclass, Penlight, and LÖVE.
