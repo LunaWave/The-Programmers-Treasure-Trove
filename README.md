@@ -4,7 +4,7 @@
 
 [The Programmer's Treasure Trove](https://github.com/emerald6o4/The-Programmers-Treasure-Trove) is a **GitHub** repository that holds a vast collection of invaluable knowledge for programming enthusiasts.
 
-📚 This treasure trove includes:
+📚 This treasure trove includes: (Soon)
 - 📖 Comprehensive documentation on various programming languages
 - 💻 Code snippets in multiple languages
 - 🎓 Guides to learning different programming languages
