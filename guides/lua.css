@@ -1,5 +1,24 @@
+/* main page css */
 body {
-    background-color: #121212;
-    color: grey;
-     }
+background-color: #121212;
+color: lightgray;
+}
+/* unvisited link */
+a:link {
+color: red;
+}
 
+/* visited link */
+a:visited {
+color: green;
+}
+
+/* mouse over link */
+a:hover {
+color: hotpink;
+}
+
+/* selected link */
+a:active {
+color: blue;
+} 
