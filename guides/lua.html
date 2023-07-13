@@ -1,0 +1,287 @@
+<h1 id="-the-programmer-s-treasure-trove-">🌟 The Programmer&#39;s Treasure Trove 🌟</h1>
+<p><span style="font-size: 10px;">(<em>A note for people coming to learn for Roblox development. While this is close to the same language as Roblox&#39;s (Luau), this <strong>DOES NOT</strong> provide a full guide for Roblox scripting. Sorry!</em>)</span></p>
+<h3 id="introduction-to-lua">Introduction to Lua</h3>
+<p>Lua <span style="font-size: 10px;">(<em>Not to be confused with <span style="color: lightcyan;"><a href="https://luau-lang.org/">Luau</a></span></em>)</span> is a programming language known for its unique and straightforward syntax. It keeps things simple, making it easier to learn and understand. With Lua, you&#39;ll find a clean and intuitive approach that allows you to express your ideas concisely. Its focus on readability and minimalism promotes writing clear and maintainable code.</p>
+<blockquote>
+<p>Remember! Before learning any programming language... &quot;<u><strong>Successful programming requires a combination of dedication, continuous learning, and honing of skills.</strong></u> and almost always dedication is greater than skill! As long as you persevere you will grow!&quot;</p>
+</blockquote>
+<h2 id="table-of-contents-">Table of Contents:</h2>
+<ul>
+<li><a href="#introduction-to-lua">Introduction</a> </li>
+<li><a href="#table-of-contents">Table of Contents</a> </li>
+<li><a href="#resources">Resources</a></li>
+<li>Basic Lua<ul>
+<li><a href="#variables">Variables</a></li>
+<li><a href="#tables">Tables</a></li>
+<li><a href="#functions">Functions</a></li>
+</ul>
+</li>
+<li>More Advanced Lua<ul>
+<li><a href="#usage-of-libraries-and-frameworks">Usage of Libraries &amp; Frameworks</a></li>
+</ul>
+</li>
+<li><a href="#misc-topics">Misc. Topics</a><ul>
+<li><a href="#object-oriented-programming-oop">Object-Oriented Programming</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="resources">Resources</h2>
+<p>Here are some things you might need for development in Lua! (Note: Before you install from their website, check if your package manager has it, it makes installing easy! :D)</p>
+<ul>
+<li><a href="https://www.lua.org/">Lua</a> is needed.. Duh <ul>
+<li><a href="https://www.lua.org/download.html">Install the latest version of Lua</a></li>
+</ul>
+</li>
+<li><a href="https://luarocks.org/">Luarocks</a> contains a ton of libraries and frameworks for Lua. (Luarocks usage is not covered in this)<ul>
+<li><a href="https://github.com/luarocks/luarocks/wiki/Download">Install Luarocks!</a></li>
+</ul>
+</li>
+<li><p><a href="https://luajit.org/">LuaJIT</a> is a Just-In-Time compiler, meaning it compiles your code before running, making it super-fast! (Some Lua built functions do not work in LuaJIT. But for the most part, it maintains 95% of Lua&#39;s functionality, with <a href="https://staff.fnwi.uva.nl/h.vandermeer/docs/lua/luajit/luajit_performance.html">7x the speed</a>)</p>
+<ul>
+<li><a href="https://luajit.org/download.html">Install LuaJIT</a> </li>
+</ul>
+</li>
+<li><p>Libraries (LuaRocks)</p>
+<ul>
+<li><a href="https://lunarmodules.github.io/luasocket/">LuaSocket</a> <br><ul>
+<li>Network support for the Lua language <br>
+<code>luarocks install luasocket</code> <br>
+<code>local socket = require(&#39;socket&#39;)</code></li>
+</ul>
+</li>
+<li><a href="https://www.inf.puc-rio.br/~roberto/lpeg/">Lpeg</a> (<a href="https://luarocks.org/modules/gvvaughan/lpeg">View on LuaRocks</a>) <br><ul>
+<li>LPeg is a new pattern-matching library for Lua, based on Parsing Expression Grammars (PEGs). <br>
+<code>luarocks install lpeg</code> <br>
+<code>local lpeg = require(&#39;lpeg&#39;)</code></li>
+</ul>
+</li>
+<li><a href="https://lunarmodules.github.io/luafilesystem/">LFS or Lua File System</a> (<a href="https://luarocks.org/modules/hisham/luafilesystem">View on LuaRocks</a>)<br><ul>
+<li>LuaFileSystem is a Lua library developed to complement the set of functions related to file systems offered by the standard Lua distribution. <br>
+<code>luarocks install lfs</code> <br>
+<code>local lfs = require(&#39;lfs&#39;)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="variables">Variables</h2>
+<p>In Lua, variables are used to store and manipulate data. They are like containers that hold values of different types such as numbers, strings, and more. Here&#39;s a simple explanation of variables in Lua:</p>
+<ul>
+<li>Variable Declaration:
+To create a variable, you simply assign a value to it using the assignment operator (=). Lua is dynamically typed, which means you don&#39;t need to explicitly declare the type of the variable. For example:</li>
+</ul>
+<pre><code><span class="hljs-attr">myVariable</span> = <span class="hljs-number">10</span>
+</code></pre><h4 id="variable-naming-">Variable Naming:</h4>
+<p>Variable names in Lua can consist of letters, digits, and underscores (_), but they must start with a letter or an underscore. Lua is case-sensitive, so myVariable and myvariable are considered different variables.</p>
+<h4 id="variable-types-">Variable Types:</h4>
+<p>Lua supports multiple data types, and the type of a variable is determined by the value it holds. Some common types include:</p>
+<ul>
+<li>Numbers: Represented as integers or floating-point values.</li>
+<li>Strings: Sequences of characters enclosed in single or double quotes.</li>
+<li>Booleans: Represented as either true or false.</li>
+<li>Tables: A versatile data structure that can hold multiple values.</li>
+<li>Functions: Blocks of reusable code.</li>
+</ul>
+<hr>
+<ul>
+<li>Variable Assignment and Manipulation:
+You can assign new values to a variable at any time. For example:</li>
+</ul>
+<pre><code>myVariable = <span class="hljs-number">20</span>  <span class="hljs-comment">-- Assigning a new value</span>
+myVariable = myVariable + <span class="hljs-number">5</span>  <span class="hljs-comment">-- Modifying the value</span>
+</code></pre><ul>
+<li><p>Variable Scope:
+Variables in Lua have a scope, which determines their visibility and lifetime. A variable declared outside any code block has global scope and can be accessed from anywhere. Variables declared within a code block, such as a function, have local scope and are only accessible within that block.</p>
+</li>
+<li><p>Nil Value:
+If a variable doesn&#39;t have a value assigned, it is nil by default. nil represents the absence of a value.</p>
+</li>
+</ul>
+<p>You can also assign function values and what functions return, but more on that later. But just for this context, one of these functions returns a value.</p>
+<pre><code>myVariable = myFunction -- Doesn't<span class="hljs-built_in"> execute </span>the function
+myVariable = myFunction() -- This does<span class="hljs-built_in"> execute </span>the function,<span class="hljs-built_in"> and </span>this is assigned the<span class="hljs-built_in"> return </span>values of the function
+</code></pre><p>If you don&#39;t understand all this fancy <em>function</em> and <em>return</em> stuff, don&#39;t worry. You will understand it later :).</p>
+<p>Oh and also, if you have seen me putting text in my examples above, it&#39;s called commenting. Comments don&#39;t affect your code, and are like notes. You can start comments by putting &#39;--&#39; and then your comment:</p>
+<pre><code><span class="hljs-comment">-- Your comment here</span>
+<span class="hljs-comment">-- or</span>
+<span class="hljs-comment">--[[
+    Your comment here
+]]</span>
+</code></pre><h2 id="tables">Tables</h2>
+<p>In Lua, tables are a fundamental data structure that can be used to create arrays, dictionaries, objects, and more. They are highly flexible and can store different types of values as key-value pairs. Here&#39;s an explanation of tables in Lua:</p>
+<ul>
+<li>Table Creation:
+Tables in Lua can be created using curly braces {} or the table library functions. For example:</li>
+</ul>
+<pre><code>-- <span class="hljs-keyword">Using</span> curly braces
+local myTable = {}
+
+-- <span class="hljs-keyword">Using</span> <span class="hljs-keyword">table</span> library <span class="hljs-comment">function</span>
+local myTable = <span class="hljs-keyword">table</span>.create()
+</code></pre><ul>
+<li><p>Key-Value Pairs:
+Tables store data as key-value pairs, where the keys can be of any type (except nil) and the values can be any valid Lua value. Keys are used to access the corresponding values. For example:</p>
+<p>(<strong>Important note for tables: Remember to put the commas on your tables! You don&#39;t need a comma on your last table entry, but it doesnt hurt to have it.</strong>)</p>
+</li>
+</ul>
+<pre><code><span class="hljs-keyword">local</span> person = {
+  name = <span class="hljs-string">"John"</span>,
+  age = <span class="hljs-number">25</span>, <span class="hljs-comment">-- Comma needed</span>
+  isStudent = <span class="hljs-keyword">true</span> <span class="hljs-comment">-- Comma not needed</span>
+}
+<span class="hljs-built_in">print</span>(person.name)  <span class="hljs-comment">-- Output: John</span>
+<span class="hljs-built_in">print</span>(person.age)   <span class="hljs-comment">-- Output: 25</span>
+<span class="hljs-built_in">print</span>(person.isStudent)  <span class="hljs-comment">-- Output: true</span>
+</code></pre><ul>
+<li>Table Access:
+You can access table values using square brackets [] or dot notation .. For example:</li>
+</ul>
+<pre><code>local person = {
+  name = <span class="hljs-string">"John"</span>,
+  age = <span class="hljs-number">25</span>
+}
+<span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(person[<span class="hljs-string">"name"</span>])</span></span>  -- Output: John
+<span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(person.age)</span></span>      -- Output: <span class="hljs-number">25</span>
+</code></pre><ul>
+<li>Adding and Modifying Table Elements:
+You can add new key-value pairs or modify existing ones by assigning values to them. For example:</li>
+</ul>
+<pre><code><span class="hljs-keyword">local</span> person = {
+  <span class="hljs-built_in">name</span> = <span class="hljs-string">"John"</span>,
+  age = <span class="hljs-number">25</span>
+}
+person.isStudent = <span class="hljs-literal">true</span>  <span class="hljs-comment">-- Adding a new key-value pair</span>
+person.age = <span class="hljs-number">26</span>         <span class="hljs-comment">-- Modifying an existing value</span>
+</code></pre><ul>
+<li>Iterating Over Tables:
+Lua provides different ways to iterate over the elements of a table. The pairs() function can be used to iterate over all key-value pairs, while the ipairs() function is specifically used for iterating over array-like tables. For example:</li>
+</ul>
+<pre><code><span class="hljs-keyword">local</span> fruits = {<span class="hljs-string">"apple"</span>, <span class="hljs-string">"banana"</span>, <span class="hljs-string">"orange"</span>}
+<span class="hljs-keyword">for</span> key, value <span class="hljs-keyword">in</span> <span class="hljs-built_in">pairs</span>(fruits) <span class="hljs-keyword">do</span>
+  <span class="hljs-built_in">print</span>(key, value)
+<span class="hljs-keyword">end</span>
+<span class="hljs-comment">-- Output:</span>
+<span class="hljs-comment">-- 1   apple</span>
+<span class="hljs-comment">-- 2   banana</span>
+<span class="hljs-comment">-- 3   orange</span>
+</code></pre><p>Table Length:
+You can get the length of an array-like table (the number of elements) using the # operator. However, note that this doesn&#39;t work for tables with mixed key types or non-consecutive numeric keys. For example:</p>
+<pre><code><span class="hljs-built_in">local</span> fruits = {<span class="hljs-string">"apple"</span>, <span class="hljs-string">"banana"</span>, <span class="hljs-string">"orange"</span>}
+<span class="hljs-built_in">print</span>(<span class="hljs-comment">#fruits)  -- Output: 3</span>
+</code></pre><ul>
+<li>Table Methods:
+Lua provides several useful methods to manipulate tables, such as table.insert(), table.remove(), and table.sort(). These methods allow you to insert elements, remove elements, and sort arrays, respectively.</li>
+</ul>
+<p>Tables are a powerful feature in Lua and are widely used for organizing and manipulating data. They offer flexibility and can be used in various ways depending on your program&#39;s needs.</p>
+<h2 id="functions">Functions</h2>
+<p> In Lua, functions are blocks of reusable code that can be called and executed multiple times. They allow you to encapsulate logic, improve code organization, and promote the concept of &quot;Don&#39;t Repeat Yourself&quot; (DRY), which encourages reusing code instead of duplicating it. Here&#39;s an explanation of functions and how they relate to the DRY principle:</p>
+<ul>
+<li>Function Declaration:
+In Lua, you can declare a function using the function keyword, followed by the function name, parentheses for parameters (optional), and a block of code enclosed in end. For example:</li>
+</ul>
+<pre><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">greet</span><span class="hljs-params">()</span></span>
+  <span class="hljs-built_in">print</span>(<span class="hljs-string">"Hello, world!"</span>)
+<span class="hljs-keyword">end</span>
+</code></pre><ul>
+<li>Function Parameters:
+Functions can take input values called parameters or arguments. Parameters are specified within the parentheses during function declaration. For example:</li>
+</ul>
+<pre><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">greet</span><span class="hljs-params">(name)</span></span>
+  <span class="hljs-built_in">print</span>(<span class="hljs-string">"Hello, "</span> .. name .. <span class="hljs-string">"!"</span>)
+<span class="hljs-keyword">end</span>
+
+greet(<span class="hljs-string">"John"</span>)  <span class="hljs-comment">-- Output: Hello, John!</span>
+</code></pre><ul>
+<li>Function Return Values: (Referenced briefly in Variable assignment)
+Functions can also return values using the return keyword. This allows functions to compute a result and pass it back to the caller. For example:</li>
+</ul>
+<pre><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span><span class="hljs-params">(a, b)</span></span>
+  <span class="hljs-keyword">return</span> a + b
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-keyword">local</span> result = add(<span class="hljs-number">3</span>, <span class="hljs-number">5</span>)
+<span class="hljs-built_in">print</span>(result)  <span class="hljs-comment">-- Output: 8</span>
+</code></pre><ul>
+<li>Function Reusability and DRY:
+The concept of DRY encourages avoiding code duplication by writing reusable functions. When you encounter a task that needs to be performed multiple times, you can define a function for that task and call it whenever needed. This improves code maintainability and reduces the chances of introducing errors. For example:</li>
+</ul>
+<pre><code>    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">greet</span><span class="hljs-params">(name)</span>
+      <span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"Hello, "</span> .. name .. <span class="hljs-string">"!"</span>)</span>
+    <span class="hljs-title">end</span>
+
+    <span class="hljs-title">greet</span><span class="hljs-params">(<span class="hljs-string">"John"</span>)</span>
+    <span class="hljs-title">greet</span><span class="hljs-params">(<span class="hljs-string">"Jane"</span>)</span>
+    <span class="hljs-title">greet</span><span class="hljs-params">(<span class="hljs-string">"Alice"</span>)</span></span>
+</code></pre><p>In this example, instead of writing the greeting code multiple times, we define a greet() function once and call it with different names. This adheres to the DRY principle and avoids repetition.</p>
+<ul>
+<li>Function Scope:
+Variables declared within a function have local scope, which means they are only accessible within that function. This allows functions to have their own set of variables without interfering with other parts of the program.</li>
+</ul>
+<p>Functions are a fundamental building block in Lua programming. They enable code reuse, promote modularity, and play a crucial role in adhering to the DRY principle by avoiding code duplication. By defining functions for common tasks, you can write more efficient and maintainable code.</p>
+<h2 id="usage-of-libraries-and-frameworks">Usage of Libraries and Frameworks</h2>
+<p>Libraries (Libs) and Frameworks can be used to enhance the Lua langauge.</p>
+<h3 id="what-is-the-difference-between-libs-and-frameworks-">What is the difference between Libs and Frameworks?</h3>
+<ul>
+<li><p>Libraries:
+Libraries in Lua are collections of reusable code that provide specific functionality. They are typically designed to solve specific problems or provide utility functions. Lua libraries are often distributed as standalone modules or files that can be included in your Lua scripts. Libraries can be developed by the Lua community or by individuals and organizations to extend Lua&#39;s capabilities. They provide ready-to-use functions and modules that you can incorporate into your Lua code. Examples of Lua libraries include lpeg (for pattern matching and parsing), luasocket (for networking), and luafilesystem (for file system operations).</p>
+</li>
+<li><p>Frameworks:
+Frameworks, on the other hand, are more comprehensive software structures that provide a foundation or a set of tools to build applications. Frameworks often impose a specific architecture or design pattern to structure your code and provide a framework-specific way of solving problems. They are more opinionated and offer a higher-level abstraction compared to libraries. Frameworks in Lua typically provide a complete set of tools, modules, and conventions to develop specific types of applications, such as web frameworks or game frameworks. Examples of Lua frameworks include LÖVE (for game development), OpenResty (for web development with Nginx), and Sailor (a web framework).</p>
+</li>
+</ul>
+<h3 id="how-do-i-load-a-library-">How do I load a Library?</h3>
+<p>You can load a library using the &#39;require&#39; statement: (For example, loading lfs)</p>
+<pre><code><span class="hljs-comment">-- Has to be correct vvv </span>
+<span class="hljs-built_in">local</span> lfs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'lfs'</span>)
+<span class="hljs-comment">--    ^^^ can be anything</span>
+</code></pre><h2 id="misc-topics">Misc. Topics</h2>
+<p>These are miscellaneous topics and sections that could be useful for later in your programming career!</p>
+<p>Table of Contents for Misc. Topics:</p>
+<ul>
+<li><a href="#object-oriented-programming-oop">Object Oriented Programming (OOP)</a></li>
+</ul>
+<h3 id="object-oriented-programming-oop-">Object Oriented Programming (OOP)</h3>
+<p>In Lua, you can implement object-oriented programming (OOP) concepts using tables and metatables. While Lua doesn&#39;t have built-in classes like some other programming languages, you can create objects and define their behavior using metatables. Here&#39;s a simplified explanation of OOP in Lua:</p>
+<ul>
+<li><p>Objects and Tables:
+In Lua, objects can be represented using tables. Tables can store data and functions, making them suitable for constructing objects. Each object is an instance of a table.</p>
+</li>
+<li><p>Metatables:
+Metatables are special tables in Lua that define the behavior of other tables (objects). By assigning a metatable to a table, you can specify how operations like indexing, assignment, and arithmetic should be handled. Metatables allow you to define custom methods and control the behavior of objects.</p>
+</li>
+<li><p>Creating Objects:
+To create an object, you typically start by creating a table and setting its metatable to define its behavior. You can define methods as functions inside the metatable. For example:</p>
+</li>
+</ul>
+<pre><code><span class="hljs-comment">-- Define a metatable with methods</span>
+<span class="hljs-keyword">local</span> myClass = {
+  value = <span class="hljs-number">0</span>,
+  increment = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(self, amount)</span></span>
+    self.value = self.value + amount
+  <span class="hljs-keyword">end</span>
+}
+
+<span class="hljs-comment">-- Create an object and set its metatable</span>
+<span class="hljs-keyword">local</span> myObject = {}
+<span class="hljs-built_in">setmetatable</span>(myObject, { __index = myClass })
+
+<span class="hljs-comment">-- Use the object and its methods</span>
+<span class="hljs-built_in">print</span>(myObject.value)      <span class="hljs-comment">-- Output: 0</span>
+myObject:increment(<span class="hljs-number">5</span>)
+<span class="hljs-built_in">print</span>(myObject.value)      <span class="hljs-comment">-- Output: 5</span>
+</code></pre><p>In this example, myClass is the metatable defining the behavior of the objects. increment is a method defined inside the metatable. By setting the metatable of myObject to myClass, myObject inherits the methods and properties defined in myClass.</p>
+<ul>
+<li>Method Invocation:</li>
+<li>When calling a method on an object, Lua provides a shorthand syntax using the colon (:) operator. The colon automatically passes the object as the first argument (self) to the method. For example:</li>
+</ul>
+<pre><code>myObject:increment(5)
+</code></pre><pre><code>This <span class="hljs-keyword">is</span> equivalent <span class="hljs-keyword">to</span> myObject.increment(myObject, <span class="hljs-number">5</span>), <span class="hljs-keyword">where</span> myObject <span class="hljs-keyword">is</span> explicitly passed <span class="hljs-keyword">as</span> <span class="hljs-keyword">the</span> <span class="hljs-keyword">first</span> argument.
+</code></pre><ul>
+<li><p>Inheritance and Polymorphism:
+In Lua, you can achieve inheritance by creating a child table with its own metatable and setting the parent table as its metatable. This allows the child object to inherit methods and properties from the parent object. Polymorphism can be achieved by overriding methods in the child metatable or by adding additional methods specific to the child object.</p>
+</li>
+<li><p>Garbage Collection:
+Lua handles memory management through garbage collection. When an object is no longer referenced, it becomes eligible for garbage collection, and Lua automatically frees the associated memory.</p>
+</li>
+</ul>
+<p>It&#39;s important to note that Lua&#39;s approach to OOP using tables and metatables is flexible but requires careful design and manual management of object behavior. Several Lua libraries and frameworks provide additional abstractions and conventions to simplify and enhance object-oriented programming in Lua, such as middleclass, Penlight, and LÖVE.</p>
