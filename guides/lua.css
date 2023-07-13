@@ -3,6 +3,13 @@ body {
 background-color: #121212;
 color: lightgray;
 }
+/*CODE*/
+code {
+font-family: "Courier New", monospace;
+background-color: #252525;
+color: #00a50b;
+}
+/*LINKS*/
 /* unvisited link */
 a:link {
 color: green;
