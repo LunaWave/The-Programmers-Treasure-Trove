@@ -1,28 +1,29 @@
 /* main page css */
 body {
-background-color: #121212;
-color: lightgray;
+background-color:  #121212;
+color: #FFF;
+font: "Roboto";
 }
 /*CODE*/
 code {
-font-family: "Courier New", monospace;
-background-color: #252525;
-color: #00a50b;
+font: "Jetbrains";
+background-color: #1E1E1E;
+color:  #D4D4D4;
 }
 /*LINKS*/
 /* unvisited link */
 a:link {
-color: green;
+color: #4E94CE;
 }
 
 /* visited link */
 a:visited {
-color: darkgreen;
+color: #78B8E0;
 }
 
 /* mouse over link */
 a:hover {
-color: lightgreen;
+color: #A38CC4;
 }
 
 /* selected link */
