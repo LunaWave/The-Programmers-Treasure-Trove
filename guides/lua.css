@@ -2,21 +2,20 @@
 body {
 background-color: #121212;
 color: lightgray;
-text-align: center;
 }
 /* unvisited link */
 a:link {
-color: red;
+color: green;
 }
 
 /* visited link */
 a:visited {
-color: green;
+color: darkgreen;
 }
 
 /* mouse over link */
 a:hover {
-color: hotpink;
+color: lightgreen;
 }
 
 /* selected link */
