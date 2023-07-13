@@ -2,6 +2,7 @@
 body {
 background-color: #121212;
 color: lightgray;
+text-align: center;
 }
 /* unvisited link */
 a:link {
