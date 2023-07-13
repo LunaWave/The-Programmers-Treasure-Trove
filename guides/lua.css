@@ -6,9 +6,10 @@ font: "Roboto";
 }
 /*CODE*/
 code {
-font: "Jetbrains";
+font: "Jetbrains Mono";
 background-color: #1E1E1E;
 color:  #D4D4D4;
+border: 1px solid #D4D4D4;
 }
 /*LINKS*/
 /* unvisited link */
